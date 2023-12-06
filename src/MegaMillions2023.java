@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.ArrayList;
 
-class MegaMillions extends Thread {
+class MegaMillions23 extends Thread {
     static ArrayList<Integer> lotto = new ArrayList<Integer>();
     ArrayList<Integer> ticket = new ArrayList<Integer>();
     static volatile boolean winner = false;
@@ -45,16 +45,16 @@ public class MegaMillions2023 {
         int n = 12;
         long totalTicketsBought = 0;
         double total = 0;
-        MegaMillions[] tickets = new MegaMillions[n];
-        MegaMillions.winningTicket();
+        MegaMillions23[] tickets = new MegaMillions23[n];
+        MegaMillions23.winningTicket();
         for(int i = 0; i < n; i++) {
-            tickets[i] = new MegaMillions();
+            tickets[i] = new MegaMillions23();
             tickets[i].start();
         }
-        while(!MegaMillions.winner) {
+        while(!MegaMillions23.winner) {
             Thread.sleep(60000);
         }
-        for (MegaMillions t : tickets) {
+        for (MegaMillions23 t : tickets) {
             total += t.spent;
             totalTicketsBought += t.ticketsBought;
         }
